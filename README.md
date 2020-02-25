@@ -23,6 +23,8 @@ http://www.cplusplus.com/doc/tutorial/basic_io/   get input from user
 http://www.cplusplus.com/forum/beginner/4442/  how to write to a file
 https://en.cppreference.com/w/cpp/numeric/math/pow how to raise to the power of 2
 https://www.geeksforgeeks.org/log-function-cpp/ how to express natural log in c++
+got help from Lucas Torti, Wyatt Miller, Christopher Chang
+help Nidhi Vedantam with her program
 
 run the program: g++ Assignment1.cpp
                  ./a.out input.txt
