@@ -1,0 +1,30 @@
+Name: Yuki Chen 
+Student ID: 2320235 
+Email: yingchen@chapman.edu 
+Session: CPSC350-01 
+the sum of the length of the DNA strings is: 32
+the mean of the length of the DNA strings is: 6.4
+the variance of the length of the DNA strings is: 0.64
+the standard deviation of the length of the DNA strings is: 0.8
+the probability of A is: 0.25
+the probability of C is: 0.25
+the probability of T is: 0.25
+the probability of G is: 0.25
+the probability of AA is: 0.037037
+the probability of AC is: 0.111111
+the probability of AT is: 0.0740741
+the probability of AG is: 0.0740741
+the probability of CA is: 0.0740741
+the probability of CC is: 0.037037
+the probability of CT is: 0.111111
+the probability of CG is: 0.0740741
+the probability of TA is: 0.0740741
+the probability of TC is: 0.0740741
+the probability of TT is: 0.037037
+the probability of TG is: 0.0740741
+the probability of GA is: 0.037037
+the probability of GC is: 0.037037
+the probability of GT is: 0.037037
+the probability of GG is: 0.037037
+value of C: -0.464893
+value of D: 6.02809
