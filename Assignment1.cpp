@@ -77,6 +77,7 @@ int main(int argc, char** argv) {
   double c;
   double d;
   double pi=3.1415926;
+  double randomNumber;
 
 //open input file
   ifstream InputFile;
@@ -350,23 +351,55 @@ int main(int argc, char** argv) {
   }
 //close input file
   InputFile.close();
+  // initialize variable
+  string dnaStr = "";
+  for (int i = 0; i < 1000; ++i)
+  {
+    //generate 2 random number a1 and b
+    a1=((double)rand()/(double)RAND_MAX);
+    b=((double)rand()/(double)RAND_MAX);
+    //calculate the DNA each line length = d
+    c = (sqrt((-2) * log(a1))) * (cos(2 * pi * b));
+    d = standarddeviation * c + mean;
+    //get a nucleotide using probability
+      for(int i = 0; i < d; ++i)
+      {
+        //get a random number between 0 and 1 to compare to the probability of each letter
+        randomNumber = ((double)rand()/(double)RAND_MAX);
+        //generate nucleotide according to its probability
+        if (randomNumber < probabilityA)
+        {
+          //append the nucleotides in string
+          dnaStr = dnaStr + "A";
+        }
+       //generate nucleotide according to its probability
+        else if (randomNumber < probabilityA+probabilityC && randomNumber >= probabilityA)
+        {
+          dnaStr = dnaStr + "C";
+        }
+        else if (randomNumber < probabilityA+probabilityC+probabilityG && randomNumber >= probabilityA+probabilityC)
+        {
+          dnaStr = dnaStr + "G";
+        }
+        else if (randomNumber < 1 && randomNumber >= probabilityA+probabilityC+probabilityG)
+        {
+          dnaStr = dnaStr + "T";
+        }
+      }
+      //go to the next line for each string
+      dnaStr += "\n";
+  }
+  //output DNA strings to .out file
+       cout << "DNA strings: " << dnaStr << endl;
+       OutputFile <<"DNA strings: " <<  endl;
+       OutputFile << dnaStr << endl;
 
-// generate 1000 DNA strings
-//generate 2 random numbers a1 and b in (0,1]
-   a1=((double)rand()/(double)RAND_MAX);
-   b=((double)rand()/(double)RAND_MAX);
-
-//getting values of C and D
-   c = (sqrt((-2) * log(a1))) * (cos(2 * pi * b));
-   d = standarddeviation * c + mean;
-
-   cout << "value of C: " << c << endl;
-   cout << "value of D: " << d << endl;
-   OutputFile << "value of C: " << c << endl;
-   OutputFile << "value of D: " << d << endl;
-
-
+//close output file
   OutputFile.close();
+
+
+
+
 
   //prompt the user to open another file
   string answer;
@@ -382,24 +415,9 @@ int main(int argc, char** argv) {
     InputFile.open(inputfileName);
   } else
   {
-    //exit the program when user chooses no 
+    //exit the program when user chooses no
     cout << "exit the program " << endl;
   }
 
-
-
   return 0;
 }
-
-
-
-
-
-
-// https://stackoverflow.com/questions/1340729/how-do-you-generate-a-random-double-uniformly-distributed-between-0-and-1-from-c/1340762  generate random number in c++
-//http://www.fredosaurus.com/notes-cpp/io/readtextfile.html     how to open a file
-//https://stackoverflow.com/questions/43956124/c-while-loop-to-read-from-input-file  read from a file
-//http://www.cplusplus.com/doc/tutorial/basic_io/   get input from user
-//http://www.cplusplus.com/forum/beginner/4442/  how to write to a file
-//https://en.cppreference.com/w/cpp/numeric/math/pow how to raise to the power of 2
-// https://www.geeksforgeeks.org/log-function-cpp/ how to express natural log in c++
