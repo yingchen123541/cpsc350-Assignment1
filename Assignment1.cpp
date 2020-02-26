@@ -81,12 +81,16 @@ int main(int argc, char** argv) {
 
 //open input file
   ifstream InputFile;
-  InputFile.open(inputfileName);
+
   ofstream OutputFile;
   //open output file
+  InputFile.open(inputfileName);
   OutputFile.open("YukiChen.out");
 
 //if fail to open input file
+bool fileOk = true;
+while(fileOk)
+{
   if(!InputFile)
   {
     //output error message
@@ -398,9 +402,6 @@ int main(int argc, char** argv) {
   OutputFile.close();
 
 
-
-
-
   //prompt the user to open another file
   string answer;
   cout << "do you want to open another file and process? enter 'yes' or 'no' " << endl;
@@ -413,11 +414,13 @@ int main(int argc, char** argv) {
     cout << "enter your file name " << endl;
     cin >> inputfileName;
     InputFile.open(inputfileName);
+    OutputFile.open("YukiChen.out");
   } else
   {
     //exit the program when user chooses no
     cout << "exit the program " << endl;
+    bool fileOk = false;
   }
-
+}
   return 0;
 }
