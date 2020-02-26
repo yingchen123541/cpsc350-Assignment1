@@ -23,9 +23,9 @@ http://www.cplusplus.com/doc/tutorial/basic_io/   get input from user
 http://www.cplusplus.com/forum/beginner/4442/  how to write to a file
 https://en.cppreference.com/w/cpp/numeric/math/pow how to raise to the power of 2
 https://www.geeksforgeeks.org/log-function-cpp/ how to express natural log in c++
-got help from Lucas Torti, Wyatt Miller, Christopher Chang
-help Nidhi Vedantam with her program
-got help from the tutoring center 
+got help from Lucas Torti, Wyatt Miller, and Christopher Chang on how to read from a file and print out all letters
+helped Nidhi Vedantam on how to open and write to a file
+got help from the tutoring center on generate 1000 DNA and prompt the user to open another file
 
 run the program: g++ Assignment1.cpp
                  ./a.out input.txt
