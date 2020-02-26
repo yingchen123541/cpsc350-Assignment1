@@ -20,6 +20,13 @@ using namespace std;
 
 //command line argumant to get input from user
 int main(int argc, char** argv) {
+
+  string inputfileName= argv[1];
+
+bool fileOk;
+//can open file and read from it again when fileOk id true
+while(fileOk=true)
+{
   //define variable types and initialize variables
   std:: string Line;
   double totalLine=0;
@@ -31,7 +38,6 @@ int main(int argc, char** argv) {
   double varianceNumeratorstotal=0.00;
   double variance=0.00;
   double standarddeviation=0.00;
-  string inputfileName= argv[1];
   int NumA=0;
   int NumT=0;
   int NumC=0;
@@ -78,19 +84,13 @@ int main(int argc, char** argv) {
   double d;
   double pi=3.1415926;
   double randomNumber;
-
-//open input file
-  ifstream InputFile;
-
-  ofstream OutputFile;
-  //open output file
-  InputFile.open(inputfileName);
-  OutputFile.open("YukiChen.out");
-
-//if fail to open input file
-bool fileOk = true;
-while(fileOk)
-{
+  //open input file
+    ifstream InputFile;
+    ofstream OutputFile;
+    //open output file
+    InputFile.open(inputfileName);
+    OutputFile.open("YukiChen.out");
+    //if fail to open input file
   if(!InputFile)
   {
     //output error message
@@ -407,19 +407,19 @@ while(fileOk)
   cout << "do you want to open another file and process? enter 'yes' or 'no' " << endl;
   cin >> answer;
   string yes="yes";
-
+  string no="no";
+//if user chooses to open another file
   if (answer==yes)
   {
     //if user chooses yes, open the file and read from it and calculate mean, sum, variance, and standard deviation
     cout << "enter your file name " << endl;
     cin >> inputfileName;
-    InputFile.open(inputfileName);
-    OutputFile.open("YukiChen.out");
-  } else
+  } else if (answer==no)
   {
     //exit the program when user chooses no
     cout << "exit the program " << endl;
     bool fileOk = false;
+    break;
   }
 }
   return 0;
